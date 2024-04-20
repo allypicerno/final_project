@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>D3 Scatter Plot</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src='https://d3js.org/d3.v7.min.js'></script>
+</head>
+<nav>
+    <h1 class="nav-title">Penguin Archipelago Visualization</h1>
+    <ul class="nav-links">
+       
+    </ul>
+</nav>
+<body>
+
+    <div class="intro-container" style="padding: 15px 25px; text-align: center;">
+        <h2 class="intro-heading">Overview</h2>
+        <p class="intro-para">
+            Utilizing the detailed dataset from the Palmer Archipelago, our task is to create a series of visualizations that articulate the 
+            link between the dietary habits of Adélie, Chinstrap, and Gentoo penguins and their
+            morphological features through the lens of δ15N and δ13C isotopic signatures. High δ15N levels indicate higher placement on the food chain, while δ13C levels differentiate from carbon sources in diets. Our data sourced from Kaggle, shows a comprehensive 
+            report of three main types of penguin species - Gentoo, Adelie, and Chinstrap Our data contains 17 columns of data, with 
+            344 data points for each penguins_size.csv provides us with morphological data about species type, culmen length and depth, 
+            body mass etc penguins_iter.csv extends beyond this data providing insights about dietary patterns and isotopic signatures
+            Collected by LTER: Long Term Ecological Research Network
+        </p>
+    </div>
+    <div class="viz-10__container">
+        <div class="viz-10__heading">
+            <h3>Species Count by Island</h3>
+        </div>
+        <div class="viz-10__content"> 
+            <div class="viz-10__graph">
+                <iframe src="island_specie_stacked.html" width="800px" height="400px"></iframe>
+            </div>
+            <div class="viz-10__para">
+                <p>In order to get a general overview of the population makeup of the penguins, we created this graph which 
+                    demonstrates the spread of penguin types across the islands. There are 3 islands that the penguins inhabit: 
+                    Dream, Biscoe and Torgerson. Each color grouping on the graph represents a species of penguin. From this visualization, 
+                    we can see that adelie penguins are found on all 3 islands, whereas gentoo and chinstrap penguins are only found on one island each.
+                </p>
+            </div>
+        </div> 
+    </div>
+    <div class="viz-4__container">
+        <div class="viz-4__heading">
+            <h3>Clutch Completion Bar Chart</h3>
+        </div>
+        <div class="viz-4__content"> 
+            <div class="viz-4__graph">
+                <img src="cluthch_completion_static.png" style="width: 700px; height: auto;">
+            </div>
+            <div class="viz-4__para">
+                <p>This graph shows the distribution of clutch completion among the 3 different islands. Clutch 
+                    completion is a binary variable: describing whether a ‘clutch’ or nest of penguin eggs is fully formed. 
+                    A completed clutch would indicate healthy penguins and sustainable population growth. While all 
+                    islands have a majority of completed clutches, Biscoe Island has a noticeably higher rate of clutch completion 
+                    and a lower rate of uncompleted clutches. Biscoe Island is made up of mostly Gentoo Penguins, who do not live anywhere else.
+                     We can make an educated guess that Gentoo Penguins and their environment are responsible for this high rate of clutch completion. 
+                </p>
+            </div>
+        </div> 
+    </div>
+    <div class="viz-8__container">
+        <div class="viz-8__heading">
+            <h3>Delta 15 Markers by Island </h3>
+        </div>
+        <div class="viz-8__content"> 
+            <div class="viz-8__graph">
+                <iframe src="delta15.html" width="800px" height="400px"></iframe>
+            </div>
+            <div class="viz-8__para">
+                <p>This visualization shows the distribution of Delta 15 N among the 3 species of penguins. The user can select an island to show 
+                    only the distribution of Delta 15 N on that island. Before selecting an island, the distribution of all penguins on 
+                    all islands is shown. Gentoo penguins have lower levels of Delta 15 N, meaning that they are lower on the food chain. 
+                </p>
+            </div>
+        </div> 
+    </div>
+    <div class="viz-7__container">
+        <div class="viz-7__heading">
+            <h3>Delta 13 Markers by Island</h3>
+        </div>
+        <div class="viz-7__content"> 
+            <div class="viz-7__graph">
+                <iframe src="delta13.html" width="800px" height="400px"></iframe>
+            </div>
+            <div class="viz-7__para">
+                <p>Similar to the Delta 15 N distribution graph, this is an interactive visualization that shows the 
+                    distribution of Delta 13 C among penguin species. The user can select an island to show only the 
+                    distribution of Delta 13 C on that island. Before selecting an island, the distribution of all penguins 
+                    on all islands is shown. The levels for Delta 13 C are low for all species, but on average, Chinstrap penguins 
+                    seem to have slightly higher levels. This might mean that Chinstrap Penguins have a significantly different diet than other species.
+                </p>
+            </div>
+        </div> 
+    </div>
+   
+
+    <div class="viz-1__container">
+        <div class="viz-1__heading">
+            <h3>Scatter Plot of Penguin Flipper Length vs. Body Mass</h3>
+        </div>
+        <div class="viz-1__content"> 
+            <div class="viz-1__graph">
+                <svg id="plot"></svg>
+                <script src='main.js'></script>
+            </div>
+            <div class="viz-1__para">
+                <p>This graph shows a positive correlation between flipper length and body mass, suggesting a synchronized increase between these two attributes. In addition to this, there is a notable positive correlation between the culmen length, which is the beak length, and both the body mass and flipper length, reaffirming the anticipated link between physical size dimensions.
+                </p>
+            </div>
+        </div> 
+    </div>
+    <div class="viz-11__container">
+        <div class="viz-11__heading">
+            <h3>Delta 13 Marker Scatterplot</h3>
+        </div>
+        <div class="viz-11__content"> 
+            <div class="viz-11__graph">
+                <iframe src="penguindelta_graph.html" width="800px" height="900px"></iframe>
+            </div>
+            <div class="viz-11__para">
+                <p>This interactive visualization is a representation of the ratio of delta 15 N and delta 13 C within the penguins in the Palmer Archipelago. When you highlight a section of the graph, it will create a bar graph of the clutch completion separated by the species type. By interacting with the graph, we can see that there is a start difference in the Delta 15 N levels of the Gentoo penguins, and there is a lower amount of Delta 13 C in chinstraps. As we found before, the lower delta 15 N levels indicate a lower trophic level of diet, meaning that the gentoo penguin diet is largely krill. Looking at the clutch completion bar graph, we can see that the gentoo penguins also have a high clutch completion in relation to the other penguins.
+                </p>
+            </div>
+        </div> 
+    
+    
+        
+    </div>
+    <div class="viz-3__container">
+        <div class="viz-3__heading">
+            <h3>Body Mass Violin Graph</h3>
+        </div>
+        <div class="viz-3__content"> 
+            <div class="viz-3__graph">
+                <img src="body_mass_violin.png" style="width: 700px; height: auto;">
+            </div>
+            <div class="viz-3__para">
+                <p>This graph shows the difference in body mass for both penguin species as well as gender. A blue violin chart indicates the sex is male, while an orange indicates female. For all species, male penguins have a larger body mass than female penguins. Gentoo Penguins however have a much larger body mass than the other species. While the distributions overlap, Gentoo penguins, both male and female, are noticeably larger. Adelie and Chinstrap penguins have similar size distributions for both sexes.
+
+                </p>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="viz-5__container">
+        <div class="viz-5__heading">
+            <h3>Correlation Matrix of Penguin Features</h3>
+        </div>
+        <div class="viz-5__content"> 
+            <div class="viz-5__graph">
+                <img src="correlation_matrix.png" style="width: 700px; height: auto;">
+            </div>
+            <div class="viz-5__para">
+                <p>This correlation matrix sheds light on the relationship between different penguin features. The strongest positive correlation 
+                    is between flipper length and body mass, meaning as one increases, the other will as well. Culmen, or beak, length was also 
+                    positively correlated with body mass and flipper length. While physical size being correlated is expected, a more surprising 
+                    correlation is between Delta 15 N and body mass/flipper length. With a -.54 correlation between body mass and Delta 15 N, larger 
+                    penguins tend to have lower levels of Delta 15 N. This is surprising because lower levels of Delta 15 N indicate lower placement on the food chain.
+                </p>
+            </div>
+        </div> 
+    
+
+    <div class="summary-container" style="padding: 15px 25px; text-align: center;">
+        <h2 class="summary-heading">
+            Summary
+        </h2>
+        <p class="summary-para">
+            Our data visualization can provide deeper insight into the physical traits and dietary habits of penguin species. Our focus on the 
+            Gentoo, Chinstrap, and Adelie penguins in the Palmer Archipelago has shown that Gentoo penguins are physically larger and have a 
+            higher clutch completion. This leads us to believe Gentoo penguins are healthier and have a more sustainable population with high 
+            survival rates. We also used Delta 15 N and Delta 13 C as a measure of penguin diets, and have shown that Gentoo Penguins have lower 
+            Delta 15 N levels, while Chinstrap penguins have higher Delta 13 C levels. We were surprised about the negative correlation between 
+            Delta 15 N levels and physical traits because we assumed larger penguins would be higher on the food chain. Gentoo penguins having lower Delta 
+            15 levels could indicate them being lower on the food chain, meaning they are common prey. However, we found research to complement 
+            our surprising visualization results. According to a study from the National Library of Medicine, penguin species have been abruptly 
+            switching to lower-trophic (lower on the food chain) diets for the last 200 years. This could support our original idea that Gentoo 
+            Penguins are healthy and also have high survival rates. The low levels of Delta 15 N could be due to them switching their diets, and 
+            not due to a lack of survival on the food chain. In the future, we would like to continue this hypothesis on Gentoo penguins and other 
+            species switching their diets. Using a different dataset with more physical variables and over a larger timeline would prove necessary. 
+            It would also be interesting to use a dataset about the food hierarchy in this region to compare penguins’ traits with different animals 
+            and make inferences on survivability and competition. This project touched upon the food chain dynamic, but it would be very interesting 
+            to further this work. Research Links https://pubmed.ncbi.nlm.nih.gov/17620620/, https://www.kaggle.com/code/tirendazacademy/penguin-dataset-data-visualization-with-seaborn
+
+        </p>
+    </div>
+
+
+
+</body>
+</html>

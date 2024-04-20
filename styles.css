@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: #f0f2f5; /* Light grey background */
+}
+
+nav {
+    background: #2C3E50; /* Dark blue shade */
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+  
+.nav-title {
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #bdc3c7; /* Light gray for hover effect */
+}
+
+.intro-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.viz-1__content, .viz-2__content, .viz-3__content, .viz-4__content, 
+.viz-5__content, .viz-6__content, .viz-7__content, .viz-8__content, 
+.viz-9__content, .viz-10__content, .viz-11__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.viz-2__content, .viz-4__content, .viz-6__content, .viz-8__content, .viz-10__content {
+    flex-direction: row-reverse;
+}
+
+.viz-1__para, .viz-2__para, .viz-3__para, .viz-4__para, 
+.viz-5__para, .viz-6__para, .viz-7__para, .viz-8__para, 
+.viz-9__para, .viz-10__para, .viz-11__para {
+    flex: 1;
+    max-width: 800px;
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.viz-1__heading, .viz-2__heading, .viz-3__heading, .viz-4__heading, 
+.viz-5__heading, .viz-6__heading, .viz-7__heading, .viz-8__heading, 
+.viz-9__heading, .viz-10__heading, .viz-11__heading {
+    text-align: center; /* Center the heading text */
+    padding: 10px; /* Add some padding for better spacing */
+    margin-bottom: 20px; /* Space below the heading */
+
+    color: #333; /* Optional: set a text color */
+    font-size: 18px; /* Optional: adjust font size as needed */
+}
